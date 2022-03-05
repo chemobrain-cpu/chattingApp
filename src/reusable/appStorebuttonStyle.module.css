@@ -1,0 +1,18 @@
+.buttonCon{
+    display:'inline-block';
+    width:180px;
+    height:60px;
+    border-radius:10px;
+    background-color:black;
+    margin-left:10;
+    margin-right:10;
+    display: flex;
+    justify-content: space-around;
+}
+
+.box1{
+    width:40%
+}
+.box2{
+    width:50%
+}

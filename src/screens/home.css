@@ -1,12 +1,17 @@
+.chatIcon{
+    position:fixed;
+    top:75%;
+    left:93%;
+    z-index:2,
+
+}
 body {
+    
     width:100%;
     overflow-x: hidden;
     background-color: rgb(255, 255, 255);
     font-family: Roboto;
-    margin: 0px;
-}
-.color{
-    color:#e4e4e4;
+ 
 }
 
 
@@ -47,4 +52,3 @@ body {
     
     
 }
-

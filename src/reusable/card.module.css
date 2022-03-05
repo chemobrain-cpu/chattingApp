@@ -1,0 +1,12 @@
+.card{
+    
+    box-shadow:10px 3px 10px  10px rgb(235, 235, 235);
+    width:92%;
+    margin:5% auto 5% auto;
+    padding:10px 5px 10px 5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-sizing: border-box;
+    color:rgb(73, 73, 73)
+}

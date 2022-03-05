@@ -1,0 +1,19 @@
+.cardContainer{
+    display:flex;
+    margin-top:20px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding:10px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    
+}
+
+@media (max-width:900px){
+    .cardContainer{
+        margin-top:20px;
+        margin-bottom: 20px;
+        display:block;
+    }
+
+}
