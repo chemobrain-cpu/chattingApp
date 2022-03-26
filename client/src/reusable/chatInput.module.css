@@ -1,0 +1,17 @@
+
+.chatinput{
+    border:none;
+    height:80%;
+    width:75%;
+    
+    border-radius:5px;
+
+}
+.chatinputbutton{
+    background-color: rgb(197, 197, 197);
+    width:15%;
+    height:90%;
+    border-radius: 10px;
+    border: none;
+    margin-top: 0px;
+}

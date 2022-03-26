@@ -1,0 +1,49 @@
+
+body {
+    
+    width:100%;
+    overflow-x: hidden;
+    background-color: rgb(255, 255, 255);
+    font-family: Roboto;
+    
+ 
+}
+
+
+.about1,.about2,.about3{
+    flex-direction:row;
+    justify-content:space-between;
+    margin-top: 5%;
+    display: flex;
+    
+    margin:30px auto 30px auto;
+    text-align:center;
+}
+.testimonial{
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+
+@media(max-width:900px) {
+
+   
+    .testimonial{
+        display:block;
+        color:rgb(221, 94, 116)
+
+        
+    }
+    .chatIcon{
+        position:fixed;
+        top:78%;
+        left:85%;
+        z-index:2;
+    
+    }
+    
+    
+    
+}

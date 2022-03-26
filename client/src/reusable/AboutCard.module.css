@@ -1,0 +1,60 @@
+.container{
+    margin:10px auto 10px auto;
+    text-align:center;
+    
+    
+}
+
+
+.box{
+    display:inline-block;
+    margin-top: 0;
+}
+
+/* mobile platform*/
+@media(max-width:900px) {
+
+    .container{
+        margin:100px auto 0% auto;
+        text-align:center;
+       
+    }
+    .headerText{
+        font-family:sans-serif;
+        font-size:35px;
+        font-weight:900;
+        margin-bottom:10px;
+    }
+    
+    
+    
+}
+
+
+/* desktop and tab platform*/
+@media(min-width:901px) {
+ 
+    .top{
+        position:relative;
+        bottom:75px
+    }
+    
+    .container{
+        flex-direction:row;
+        justify-content:space-between;
+        margin-top: 5%;
+        display: flex;
+    }
+    .box1{
+        width:48%;
+        
+
+    }
+    .box2{
+        width:50%;
+
+
+    }
+        
+    }
+/* responsiveness*/

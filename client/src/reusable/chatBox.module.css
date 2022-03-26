@@ -1,0 +1,35 @@
+   .message{
+        display: flex;
+        
+        padding-top:2px;
+        padding-bottom: 2px;
+        flex-direction: column;
+    }
+    
+    .user{
+        align-self: flex-start;
+        color:#D65282;
+        font-size: 15px;
+        font-family: monospace;
+        font-weight: 900;
+    
+    }
+  .text{
+        align-self: flex-start;
+        color:orange;
+        font-size: 15px;
+        font-family: monospace;
+        font-weight: 900;
+    
+    }
+    
+.time{
+        align-self: flex-end;
+        color:grey;
+        font-family: monospace;
+        font-weight: 700;
+    
+    }
+
+    
+    
