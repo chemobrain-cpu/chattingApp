@@ -85,7 +85,6 @@ let Form =() =>{
   </div>
   <div className={styles.formContainer}>
   <div className={styles.formLeft} data-aos='fade-up'>
-
     <img src='./animatedcoder.gif' className={styles.animatedCoder}/>
     
     </div>
@@ -93,7 +92,8 @@ let Form =() =>{
         <Card style={{
           backgroundColor:'rgb(241, 241, 241)',
           boxShadow:'none',
-          borderRadius:'5px'
+          borderRadius:'5px',
+          alignSelf:'center'
 }}>
           <HeaderText className={styles.header}>fill the form so we can identify you and have a live chat with us </HeaderText>
   
@@ -103,7 +103,7 @@ let Form =() =>{
       
         <Card style={{borderRadius:'5px',backgroundColor:'rgb(247, 247, 247)',display:'block',padding:'25px 10px 25px 10px',boxShadow:'none'}}>
 
-        <HeaderText style={{fontSize:'20px',fontWeight:900,color:'#D65282',marginBottom:'30px',
+        <HeaderText style={{fontSize:'20px',fontWeight:900,color:'#79364d',marginBottom:'30px',
       marginTop:'-5%'}}>Sign in to Bizz</HeaderText>
           
   
@@ -147,7 +147,7 @@ let Form =() =>{
         
   
     </div>
-    <div className='formRight'>
+    <div className={styles.formRight}>
       
     </div>
 

@@ -5,51 +5,26 @@ let Admin = require("../databaseModel/user").Admin
 let Chat = require("../databaseModel/user").Chat
 
 let Message = require("../databaseModel/user").Message
-/*
-const MessageSchema = mongoose.Schema({
-    _id:mongoose.Schema.Types.ObjectId,
-    senderEmail:{
-        type:String,
-        required:true
-    },
-    recieverEmail:{
-        type:String,
-        required:true
-    },
-    message:{
-        type:String,
-        
-    },
-    roomId:{
-        type:String
-    },
-    time:{
-      typeString
-    }
-    
-})
-
-
-
-*/
 module.exports =async(io)=>{
     io.on('connection',async(socket)=>{
+     
      
       socket.on('openChat',async(data)=>{
      
        const {senderEmail,recieverEmail}= data
+       
+
        Chat.aggregate([
          {
            $match:{
-             recieverEmail,
-             senderEmail
+             recieverEmail:recieverEmail,
+             senderEmail: senderEmail
            },
 
          }
        ]).then(async(chat)=>{
          if(chat.length>0){
-           console.log('the chat is')
-           console.log(chat)
+           
           socket.emit('startchat',chat)
 
          }else{
@@ -63,8 +38,10 @@ module.exports =async(io)=>{
             }
           ]).then(async(latsAttempt)=>{
             if(latsAttempt.length>0){
+              
+           console.log('the chat is is')
               console.log(latsAttempt)
-            socket.emit('startchat',latsAttempt)
+             socket.emit('startchat',latsAttempt)
 
             }else{
               let newChat = new Chat({
@@ -74,7 +51,9 @@ module.exports =async(io)=>{
                 roomId:Math.random()
             
               })
-             socket.emit('startchat', [newChat])
+              console.log('the chat is is is')
+              console.log(newChat)
+              socket.emit('startchat', [newChat])
       
               await newChat.save()
 
@@ -91,8 +70,10 @@ module.exports =async(io)=>{
       socket.on('joinusers',(roomId,cb)=>{
         socket.join(roomId)
         console.log('user can now start chatting')
+        console.log(roomId)
         cb(roomId)
       })
+
       socket.on('getSentMessages',async(data,cb)=>{
         
         console.log('initialised')
@@ -141,4 +122,13 @@ module.exports =async(io)=>{
     })
    
 }
+console.log("XXXXXXx")
+Admin.find().then(data=>{
+  console.log(data)
+})
+
+User.find().then(data=>{
+  console.log(data)
+})
+
 

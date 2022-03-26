@@ -11,13 +11,11 @@
 
 
 .formLeft{
-    width:40%;
-    display: flex;
-    padding-top:40px
+    width:50%;
     
 }
 .formCenter{
-    width:50%
+    width:40%
 
 }
 .formRight{
@@ -40,7 +38,7 @@
     font-weight:bold;font-family:monospace;
     width:90%;
     margin-right:auto;margin-left:auto;
-    color:#962951;
+    color:#79364d;
     text-align:center;
     
 }
@@ -49,27 +47,28 @@
     display:flex;justify-content:center;align-items:center;padding-top:12px;padding-bottom:12px;
     margin-top:15px;
     margin-bottom:15px;
-    background-color:#D6528d;
+    background-color:#79364d;
     border-radius:10px;
 }
 
 @media(max-width:900px) {
     .formContainer{
-        display:flex;
+        
       
     }
     
     .formLeft{
-        width:0%
+        width:10%;
+        display:none
     }
     .formCenter{
-        width:95%;
-        margin-left: auto;
+        width:90%;
         margin-right: auto;
+        margin-left: auto;
     
     }
-    .formLeft{
-        width:0%;
+    .formRight{
+        width:10%;
         display:none
     }
     

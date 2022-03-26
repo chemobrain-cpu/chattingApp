@@ -1,8 +1,8 @@
 import React,{useCallback,useEffect} from "react"
 import './navigation.css'
 import {useNavigate,NavLink} from 'react-router-dom'
-import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { faHamburger } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon,} from "@fortawesome/react-fontawesome";
+import { faHamburger,faList } from "@fortawesome/free-solid-svg-icons";
 import {useSelector,useDispatch } from "react-redux";
 import {isToken } from "../store/action/auth";
 
@@ -48,7 +48,7 @@ let Nav =(props) =>{
          <input type='checkbox' id='check'/>
          
       <label for='check' className="checkbtn">
-      <FontAwesomeIcon icon={faHamburger} /></label>
+      <FontAwesomeIcon style={{fontSize:'30px'}} icon={faList} /></label>
     
         
       <img src='/logo.png' className='logoImage'/> 

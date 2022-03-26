@@ -1,28 +1,57 @@
 .container{
     width:400px;
-    height:160px;
-    box-shadow:10px 3px 10px  10px rgb(224, 224, 224);
-    margin: 50px auto 50px auto;
+  
     display: flex;
+    margin: 50px auto 50px auto;
     padding: 5px;
-    flex-direction: row;
-    justify-content: space-between;
     border-radius:10px;
+    justify-content: space-around;
 }
+/*
 .container:hover{
-    background-color: #D65282;
+    background-color: #d48da7;
     transition: 3s;
 }
 
-.container:hover p{
+<TestimonialCard 
+        text='There are always able to deliver..we hired these guys to build a web application for our agency' 
+        imageUrl='./person2.jpg' 
+        username='paul@gmail.com'
+        
+      />
+      
+      <TestimonialCard
+          text='There are the best digital marketers i have worked with' 
+          imageUrl='./person3.jpg' 
+          username='koi@gmail.com'
+      />
+*/
+
+
+.box1 p,.box3 p{
+    font-size: 30px;
+    background-color:#723e4f;
+    height:50px;
+    width:50px;
+    border-radius:5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color:white
 }
+
+
+
 .statement{
-  width:70%;
+  width:60%;
+  
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 
 }
 .statement p{
-    color:grey;
+    color:#723e4f;
     font-weight:bold;
     line-height: 20px;
     font-family:cursive;
@@ -38,16 +67,18 @@
     
 }
 .imageContainer{
-    width:90px;
-    height:90px;
-    border-radius: 90px;
-    background-color:rgb(207, 202, 202);
+    width:80px;
+    height:70px;
+    border-radius:70px;
+    background-color:white;
     display:flex;
     align-items: center;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 .username{
-    font-size: 20px;
+    font-size:25px;
     font-weight: bold;
 }

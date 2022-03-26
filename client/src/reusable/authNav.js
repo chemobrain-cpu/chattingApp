@@ -14,7 +14,7 @@ let AuthNav = (props)=>{
             <label className={styles.authLogoBrand}>Bizz</label>
 
         </div>
-        <Button buttonText={props.text}  className={styles.signup} style={{width:'100px',backgroundColor:'#D65282'}} click={()=>{
+        <Button buttonText={props.text}  className={styles.signup} style={{width:'100px',backgroundColor:'#79364d'}} click={()=>{
             navigate(`/${props.text}`)
             
         }}>

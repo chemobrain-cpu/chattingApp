@@ -15,7 +15,7 @@ nav{
 }
 
 label.logo{
-    color:#D65282;
+    color:#723e4f;
     font-size: 30px;
     position:absolute;
     top:20%;
@@ -34,7 +34,7 @@ nav ul{
 }
 
 nav ul li a {
-    color:#D65282;
+    color:#723e4f;
     font-size:1.2rem;
     border-radius: 3px;
     transition: 0.5s;
@@ -44,7 +44,7 @@ nav ul li a {
 }
 nav ul li:hover{
     
-    background-color:#D65282;
+    background-color:#723e4f;
     color:white
 }
 nav ul li:hover a{
@@ -57,7 +57,7 @@ nav ul li{
     width:80px;
     height:50px;
     color:white;
-    border:1px solid #D65282;
+    border:1px solid #723e4f;
     border-radius: 5px;
     display: inline-block;
     line-height: 80px;
@@ -70,7 +70,7 @@ nav ul li{
 
 .checkbtn{
     font-size:31px;
-    color:#D65282;
+    color:#723e4f;
     float:right;
     line-height: 80px;
     margin-right: 40px;
@@ -81,12 +81,14 @@ nav ul li{
     display:none;
 }
 .active{
-    background-color:#D65282;
+    background-color:#723e4f;
 }
 .active a {
     color:white
 }
-@media (max-width:900px){
+
+
+@media (max-width:500px){
     label.logo{
         font-size: 31px;
         padding-left:10px;
@@ -126,7 +128,7 @@ nav ul li{
         line-height: 41px;
         width: 30%;
         margin-right: 10px;
-        border:1px solid #D65282;
+        border:1px solid #723e4f;
         border-radius: 5px;
         display: flex;
         align-items: center;
@@ -135,7 +137,7 @@ nav ul li{
     }
     nav ul li a{
         font-size: 20px;
-        color:#D65282
+        color:#723e4f
 
     }
     

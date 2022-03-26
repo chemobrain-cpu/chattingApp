@@ -6,7 +6,7 @@ const {json} = require('body-parser')
 const cors = require('cors')
 const multer = require('multer')
 const mongoose = require('mongoose')
-mongoose.connect("mongodb://127.0.0.1:27017/BizzDB",()=>{
+mongoose.connect("mongodb+srv://admin_precious:admin_precious@cluster0.h36y5.mongodb.net/bizzDb?retryWrites=true&w=majority",()=>{
     console.log("connected")
 })
 const path = require('path')
@@ -76,6 +76,15 @@ app.use((err,req,res,next)=>{
 
 require("./routes/socket")(io)
 //requiring our socket middleware
+
+//serve static assets if we are in production
+if(process.env.Node_ENV === 'production'){
+    //set static folder
+    app.use(express.static('client/build'))
+    app.get('*',(req,res)=>{
+        res.sendFile(path.resolve(__dirname,'client','build','index.html'))
+    })
+}
 server.listen(port,()=>{
     console.log("listening on port 5000")
 })

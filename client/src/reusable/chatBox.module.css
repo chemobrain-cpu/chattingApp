@@ -8,7 +8,7 @@
     
     .user{
         align-self: flex-start;
-        color:#D65282;
+        color:white;
         font-size: 15px;
         font-family: monospace;
         font-weight: 900;
@@ -25,7 +25,7 @@
     
 .time{
         align-self: flex-end;
-        color:grey;
+        color:rgb(168, 168, 168);
         font-family: monospace;
         font-weight: 700;
     

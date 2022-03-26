@@ -16,21 +16,26 @@ let TestimonialCard =(props) =>{
   },[])
   
   return (<div className ={styles.container} style={props.style} data-aos='fade-down'>
-      <div className={styles.imageContainer}>
-      <img src={props.imageUrl} className={styles.image}/>
-          
-       
-      </div>
-      <div className={styles.statement}>
-          
-          <p className={styles.paragraph}>{props.text}</p>
- 
-          <p className={styles.username}>{props.username}</p>
+      <div className={styles.box2}>
+        <div className={styles.imageContainer}>
+            <img src={props.imageUrl} className={styles.image}/>
+                
+            
+            </div>
+            <div className={styles.statement}>
+                
+                <p className={styles.paragraph}>{props.text}</p>
+        
+                <p className={styles.username}>{props.username}</p>
+
+            </div>
+
 
       </div>
+      </div>
+            
 
-  
-  </div>
+      
     )
 }
 

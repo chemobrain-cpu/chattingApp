@@ -27,6 +27,13 @@ body {
 
 
 
+
+@media screen and(min-width:600px)  and (max-width:899px){
+   
+    
+   
+}
+
 @media(max-width:900px) {
 
    
@@ -42,6 +49,22 @@ body {
         left:85%;
         z-index:2,
     
+    }
+    
+    #checks{
+        display: none;
+    }
+    #check:checked~ul{
+        left:0;
+
+    }
+     
+    #checks:checked~.smallscreenmenu{
+       
+        left:1px;
+        transition:3s;
+        
+
     }
     
     

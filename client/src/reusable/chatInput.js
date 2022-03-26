@@ -9,7 +9,7 @@ let ChatInput = (props)=>{
     return ( <div className={`${props.className}`}>
     <input className={styles.chatinput} placeholder="type your message here" onChange={props.change} value={props.value}/>
     <button className={styles.chatinputbutton} onClick={props.submit}>
-      <FontAwesomeIcon icon={faCircleArrowRight} style={{color:'#D65282',fontSize:'30px',}} />
+      <FontAwesomeIcon icon={faCircleArrowRight} style={{color:'#79364d',fontSize:'30px',}} />
 
     </button>
 

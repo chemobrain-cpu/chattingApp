@@ -11,14 +11,6 @@ const mongoose = require('mongoose')
 let User = require("../databaseModel/user").User
 let Admin = require("../databaseModel/user").Admin
 
-let Message = require("../databaseModel/user").Message
-
-let Chat = require("../databaseModel/user").Chat
-
-
-//const nodemailer = require("nodemailer")
-
-
 module.exports.login = async(req,res)=>{
 
  //destructuring the request body
@@ -207,26 +199,9 @@ module.exports.getUsers = async(req,res,next)=>{
   
   
   }
-  
-  
-  Message.find().then(data=>{
-    console.log(data)
-  })
 
-  /*
-  
 
-User.find().then(data=>{
-    console.log(data)
-})
-
-Admin.find().then(data=>{
-    console.log(data)
-})
-Admin.deleteMany().then(data=>{
-    console.log(data)
-  })
-  
+/*
   User.deleteMany().then(data=>{
     console.log(data)
   })
@@ -245,9 +220,6 @@ Admin.deleteMany().then(data=>{
 
 
 
-
-
-/*
 {
     _id: new ObjectId("622fc66bc9ae85c11dc29f2b"),
     senderEmail: 'preciousarierhi@gmail.com1',
@@ -257,13 +229,5 @@ Admin.deleteMany().then(data=>{
     time: '15:49',
     __v: 0
   }
-
-
-
-
-
-
-
-
 
 */

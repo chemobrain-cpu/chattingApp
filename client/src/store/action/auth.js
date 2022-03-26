@@ -13,12 +13,15 @@ export const ROOM_MESSAGES = 'ROOM_MESSAGES'
 export const CLEAR_CHAT = 'CLEAR_CHAT'
 export const CLEAR_MESSAGES = 'CLEAR_MESSAGES'
 
+export const SIGNOUT = 'SIGNOUT'
+
 export const SEND_MESSAGE = 'SEND_MESSAGE'
 
 
 export const socket = IO("http://localhost:5000",{
   
 })
+
 export const isToken = () =>{
   return async(dispatch,getState)=>{
 
@@ -61,8 +64,6 @@ export const login = (credentials) =>{
        dispatch({type:ACTIVE_USER,payload:data.user})
        return 'signed in sucessfully'
       
-
-       
       }
       if(response.status == 301){
         //algorithm
@@ -78,11 +79,11 @@ export const login = (credentials) =>{
         let data = await response.json()
         return data.message
  
-        
        }
 
     }catch(err){
       alert(err.message)
+      console.log(err.message)
 
     }
 
@@ -226,13 +227,11 @@ export const adminSignup = (credentials) =>{
   }
 }
 export const getUsers = () =>{
-  alert('i was called immediately')
-
+  
   //check for unique room
   return async(dispatch,getState)=>{
-    const {userData,token,messages} = getState().auth
-    console.log(messages)
-
+    const {userData} = getState().auth
+ 
     //check for unique chat
     const uniqueChat =  localStorage.getItem('@uniqueChat')
     if(!uniqueChat){
@@ -278,55 +277,63 @@ export const getUsers = () =>{
     
   }
 }
-
 export const createChat = (id) =>{
-  
- //checking if theres this unique chat with the user based on id
- 
-
  return async(dispatch,getState)=>{
   const {userData,users} = getState().auth
-  
+  //getting client from store
   let client = users.filter(data=>data._id.toString() === id)
-  
+ 
   //creating a chat
   let chats = {
     senderEmail:userData.email,
     recieverEmail:client[0].email,
     
   }
-
-
   //check for unique chat
 
   const uniqueChat =  localStorage.getItem('@uniqueChat')
 
   let uniqueChatData = JSON.parse(uniqueChat)
+  if(uniqueChatData > 0){
+    //checking if the user exist
+    let containChat = uniqueChatData.filter(data=>data.recieverEmail === client[0].email)
+    
+    if(containChat.length > 0){
+      
+    return dispatch(chat(containChat[0]))
 
-  let containChat = uniqueChatData.filter(data=>data.recieverEmail === client[0].email)
+    }else{
+      
+     dispatch(chat({...chats,senderEmail:userData.email}))
+     uniqueChat.push(chats)
+    localStorage.setItem('@uniqueChat',JSON.stringify(uniqueChat))
+    }
 
-  if(!containChat[0]){
-    containChat.push(chats)
-    localStorage.setItem('@uniqueChat',JSON.stringify(containChat))
-    dispatch(chat(chats))
+  }else{
+    
+    uniqueChatData.push(chats)
 
-    return true
+   
+    localStorage.setItem('@uniqueChat',JSON.stringify(uniqueChatData))
+    return dispatch(chat(chats))
+    
+
 
   }
-  dispatch(chat(containChat[0]))
-  return true
+
 
 }
 
 }
-//localStorage.removeItem('@uniqueRoom')
 export const chat = (chatCredential)=>{
+  console.log(chatCredential)
 
   return async(dispatch,getState)=>{
     
       socket.emit('openChat',chatCredential)
       socket.on('startchat',(data)=>{
-      
+       console.log('start chat with data')
+       console.log(data)
         //store room id in localstorage
         const uniqueRoom =  localStorage.getItem('@uniqueRoom')
 
@@ -340,14 +347,14 @@ export const chat = (chatCredential)=>{
 
         
 
-        if(parsedUniqueRoom.length == 0){
+        if(parsedUniqueRoom.length === 0){
           
           parsedUniqueRoom.push(roomChat)
           localStorage.setItem('@uniqueRoom',JSON.stringify(parsedUniqueRoom))
          
 
         }
-        if(parsedUniqueRoom.length>0){
+        if(parsedUniqueRoom.length > 0){
           let room_Exist 
 
           for(let value of parsedUniqueRoom){
@@ -464,7 +471,7 @@ export const handleDispatchMsg = () =>{
 
   return async(dispatch)=>{
     socket.on('dispatchMsg',data=>{
-     alert('you got your own message')
+     
       return dispatch(getDispatchMsg({...data}))
     })
 
@@ -503,20 +510,23 @@ export const getRoomMessages = (id) =>{
 
   return async(dispatch,getState)=>{
     const { activeRoom,messages,activeRoomMessages} = getState().auth
-    alert(messages.length)
+    console.log(activeRoomMessages)
+
     if(messages.length > 0){
+
       for(let member of messages ){
+
         if(member.roomId == activeRoom){
-         
+
           let excluded = activeRoomMessages.filter(data=>data._id == member._id)
-          if(!excluded[0]){
+
+          if(excluded.length == 0){
             activeRoomMessages.push(member)
   
           }
         }
       }
-      
-  
+    
       dispatch({type:ROOM_MESSAGES,payload:activeRoomMessages})
       return
 
@@ -526,8 +536,16 @@ export const getRoomMessages = (id) =>{
 }
 export const clearActiveRoom = ()=>{
   
-  return async(dispatch,getState)=>{
+  return async(dispatch)=>{
     dispatch({type:CLEAR_CHAT,payload:[]})
   }
   
+}
+
+export const signout = ()=>{
+  
+  return async(dispatch)=>{
+    dispatch({type:SIGNOUT,payload:[]})
+  }
+
 }

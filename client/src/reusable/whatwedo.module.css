@@ -1,19 +1,33 @@
+
 .cardContainer{
-    display:flex;
+    display:block;
     margin-top:20px;
     margin-bottom: 20px;
     text-align: center;
     padding:10px;
     box-sizing: border-box;
-    justify-content: space-between;
     
 }
 
-@media (max-width:900px){
+
+
+
+
+@media(min-width:901px){
     .cardContainer{
+        
+        display:flex;
+        flex-direction: row;
         margin-top:20px;
         margin-bottom: 20px;
-        display:block;
+        text-align: center;
+        padding:10px;
+        box-sizing: border-box;
+        justify-content: space-between;
+        
+        
+        
     }
 
 }
+

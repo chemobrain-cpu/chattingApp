@@ -18,12 +18,7 @@ let ABoutCard =(props) =>{
   return (
   <div className ={styles.container} style={props.style} data-aos='fade-right'>
   <div className ={styles.box1} >
-    <HeaderText  style= {{
-        fontFamily:'monospace',
-        fontSize:'35px',
-        fontWeight:700,
-        marginBottom:'10px',
-    }}>{props.title}</HeaderText>
+    <HeaderText style={{color:'#79364d'}}   className={styles.headerText}>{props.title}</HeaderText>
     
     <Text style={{width:'80%',marginRight:'auto',marginLeft:'auto',textAlign:'center'}}> {props.contentBottom}</Text> 
 
@@ -33,7 +28,7 @@ let ABoutCard =(props) =>{
   
   
   <div className ={styles.box2}>
-    <img src={props.imageUrl} style={{width:'80%',marginTop:'0px',...props.imageStyle}}/>
+    <img className={styles.image} src={props.imageUrl} style={{...props.imageStyle}}/>
   </div>
 </div>
     )

@@ -1,0 +1,38 @@
+.button{
+    width:150px;
+    height:60px;
+    border-radius:5px;
+    margin-bottom:8px;
+    border:none;
+    color:white;
+    background-color: #D65282;
+    background-color: #8b4c61;
+    margin-bottom:20px;
+    margin-right:auto;
+    margin-left: auto;
+    
+}
+.userPic{
+    width:70px;
+    height:70px;
+    border-radius:70px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    margin-right:auto;
+    margin-left: auto;
+   
+    }
+.buttonContainer{
+    display:flex;
+    flex-direction: column;
+
+}
+.menuIcon{
+    align-self: flex-end;
+  
+}
+.labelContainer{
+    display:flex;
+    margin-bottom:20px;
+    padding:10px
+}

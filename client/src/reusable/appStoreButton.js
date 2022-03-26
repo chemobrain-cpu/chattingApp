@@ -5,7 +5,7 @@ import styles from './appStorebuttonStyle.module.css'
 // import your fontawesome library
 let AppStoreButton =(props) =>{
   
-  return (<div className={styles.buttonCon}>
+  return (<div className={`${styles.buttonCon} ${props.className}`}>
         
   <div className="box1">
 

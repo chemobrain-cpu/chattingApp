@@ -1,4 +1,4 @@
-import { TOKEN,ACTIVE_USER,USERS,ACTIVE_ROOM,MESSAGES,INJECT_MESSAGE,ROOM_MESSAGES,CLEAR_CHAT,CLEAR_MESSAGES,SEND_MESSAGE} from "../action/auth";
+import { TOKEN,ACTIVE_USER,USERS,ACTIVE_ROOM,MESSAGES,INJECT_MESSAGE,ROOM_MESSAGES,CLEAR_CHAT,CLEAR_MESSAGES,SEND_MESSAGE,SIGNOUT} from "../action/auth";
 
 const initialState={
     token:"",
@@ -85,8 +85,7 @@ export const authReducer = (state= initialState,action)=>{
                
             }
 
-
-         case ROOM_MESSAGES:
+        case ROOM_MESSAGES:
             return {
                 ...state,
                 activeRoomMessages:action.payload
@@ -115,6 +114,17 @@ export const authReducer = (state= initialState,action)=>{
                 messages:[...state.messages,action.payload],
                 activeRoomMessages:[...state.activeRoomMessages,action.payload]
             }
+        case SIGNOUT:
+            return {
+                token:"",
+                userData:{},
+                users:[],
+                messages:[],
+                activeRoom:'',
+                activeRoomMessages:[]
+               
+            }
+
 
         default:
             break;

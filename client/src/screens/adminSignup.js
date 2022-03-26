@@ -45,7 +45,6 @@ let AdminSignup =() =>{
   let submitHandler = async (e)=>{
     e.preventDefault()
     if(!email || !password || !photo || !secretKey){
-      alert('form is not valid valid')
       return
     }
    
@@ -130,7 +129,7 @@ let AdminSignup =() =>{
         
       
         <Card style={{borderRadius:'5px',backgroundColor:'rgb(247, 247, 247)',display:'block',padding:'25px 10px 25px 10px',boxShadow:'none'}}>
-        <HeaderText style={{fontSize:'20px',fontWeight:900,color:'#D65282',marginBottom:'30px',
+        <HeaderText style={{fontSize:'20px',fontWeight:900,color:'#79364d',marginBottom:'30px',
       marginTop:'-5%'}}>SignUp with Bizz</HeaderText>
           
   
